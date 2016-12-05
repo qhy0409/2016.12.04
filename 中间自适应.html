@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>中间自适应</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* #div1{
+             width:200px;
+             height:300px;
+             background-color: orange;
+             float:left;
+         }
+         #div2{
+             width:500px;
+             height:300px;
+             background: green;
+             float:left;
+             margin-left:10px;
+         }
+         #div3{
+             width:200px;
+             height:300px;
+             background-color: orange;
+             float:left;
+             margin-left:10px;
+         }*/
+        /*中间自适应 box-flex；
+         #box {
+             width: 900px;
+             display: -webkit-box;
+         }
+
+         #div1 {
+             width: 200px;
+             height: 300px;
+             background-color: orange;
+         }
+
+         #box div:nth-child(2) {
+             -webkit-box-flex: 1;
+             background: green;
+         }
+
+         #div3 {
+             width: 200px;
+             height: 300px;
+             background-color: orange;
+         }*/
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        #box {
+            height: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical; /*控制box下的子元素从上到下排列*/
+        }
+
+        #div1 {
+            height: 100px;
+            background-color: orange;
+        }
+
+        #div2 {
+            -webkit-box-flex: 1;
+            background: green;
+
+        }
+
+        #div3 {
+            height: 100px;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</div>
+</body>
+</html>
