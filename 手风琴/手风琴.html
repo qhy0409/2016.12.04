@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 800px;
+            height: 300px;
+            margin: 50px auto;
+            background: pink;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            width: 600px;
+            height: 300px;
+            position: absolute;
+            -webkit-transition: transform 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="../3D图片轮换/img/1.jpg" alt=""/>
+    <img src="../3D图片轮换/img/2.jpg" alt=""/>
+    <img src="../3D图片轮换/img/3.jpg" alt=""/>
+    <img src="../3D图片轮换/img/4.jpg" alt=""/>
+    <img src="../3D图片轮换/img/5.jpg" alt=""/>
+</div>
+<script>
+    var oContainer = document.getElementById("container");
+    var aImg = oContainer.getElementsByTagName("img");
+    for (var i = 0; i < aImg.length; i++) {
+        aImg[i].index = i;
+        aImg[i].style.WebkitTransform = 'translate(' + (i * 160) + 'px)';
+        aImg[i].onmouseover = function () {
+            for (var j = 0; j < aImg.length; j++) {
+                if (j <= this.index) {
+                    aImg[j].style.WebkitTransform = 'translate(' + (j * 50) + 'px)';
+                } else if (j > this.index) {
+                    aImg[j].style.WebkitTransform = 'translate(' + (j * 50 + 550) + 'px)';
+                }
+            }
+        };
+        aImg[i].onmouseout = function () {
+            for (var j = 0; j < aImg.length; j++) {
+                aImg[j].style.WebkitTransform = 'translate(' + (j * 160) + 'px)';
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
