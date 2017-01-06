@@ -1,0 +1,145 @@
+body{
+    margin-top:35px;
+    text-align:center;
+    padding:0;
+}
+h3,p{
+    padding:20px;
+}
+.container{
+    width:960px;
+    margin:0 auto;
+}
+#header,#footer,#navigation, #mainbody, #sidebar{
+    height:100px;
+    line-height:25px;
+    background:#eee;
+    margin-bottom:20px;
+}
+#navigation{
+    background: none;
+}
+#mainbody, #sidebar{
+    height:300px;
+    float:left;
+}
+#mainbody {
+    width:620px;
+    margin-right:20px;
+    background:#ddefcb;
+}
+#sidebar{
+    width:320px;
+    background:#ffcbdd;
+}
+#footer{
+    clear:both;
+}
+ul{
+    list-style: none;
+    padding:0;
+}
+#navigation li,#navigation li a{
+    display:inline-block;
+    padding:7px 15px;
+    text-decoration: none;
+    color: orange;
+}
+#navigation li a:hover{
+    background: royalblue;
+}
+#navigation li .active{
+    background: darkgray;
+}
+.toggle-btn{
+    display:none;
+    font-size:20px;
+    background: black;
+    color:white;
+    padding:7px 10px;
+    position:absolute;
+    right:10px;
+    top:50px;
+    text-decoration: none;
+}
+
+@media ( min-width: 1200px ){
+    .container{
+        width: 1170px;
+    }
+    #mainbody{
+        width: 770px;
+        margin-right: 30px;
+    }
+    #sidebar{
+        width: 370px;
+    }
+}
+
+@media ( max-width: 959px){
+    .container{
+        width: 100%;
+    }
+    #mainbody{
+        width: 67%;
+        margin-right: 3%;
+    }
+    #sidebar{
+        width: 30%;
+        float: right;
+    }
+}
+
+@media( max-width:767px){
+    #mainbody,#sidebar{
+        float:none;
+        width:100%;
+    }
+    #header{
+        font-size:12px;
+        text-align: left;
+        padding-left:50px ;
+    }
+    .toggle-btn{
+        display:inline-block;
+       /* font-size:20px;
+        background: black;
+        color:white;
+        padding:7px 10px;
+        position:absolute;
+        right:10px;
+        top:50px;
+        text-decoration: none;*/
+    }
+    #navigation .close{
+        display:none;
+    }
+    #navigation:target .close{
+        display:inline-block;
+    }
+    #navigation{
+        display:none;
+    }
+    #navigation:target{
+        display:block;
+        position: absolute;
+        top:0;
+        padding-top:70px;
+        width:100%;
+    }
+    #navigation:target ul{
+        background: black;
+
+    }
+    #navigation:target li,#navigation:target li a{
+        display:block;
+        text-align:left;
+        color:white;
+    }
+    #navigation:target a:hover{
+        background: darkmagenta;
+    }
+    #navigation:target .active{
+        background:gainsboro;
+    }
+}
