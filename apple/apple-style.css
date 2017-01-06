@@ -1,0 +1,80 @@
+/*—˘ Ω÷ÿ÷√*/
+*{
+    padding:0;
+    margin:0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border:0;
+}
+/**/
+
+#head{
+    width:100%;
+    height:40px;
+    background:#444;
+    color:white;
+    line-height:40px;
+}
+.ad{
+    max-width:980px;
+    margin:0 auto;
+   padding:0 22px;
+}
+#nav{
+    width:100%;
+    height:44px;
+    background: black;
+}
+#nav1,#nav2{
+    max-width:980px;
+    display:-webkit-box;
+    -webkit-box-pack:justify;
+    margin:0 auto;
+}
+#nav li a{
+    height:44px;
+    display:inline-block;
+    color:white;
+    line-height:44px;
+    padding:0 10px;
+}
+#nav2{
+    display:none;
+}
+.bigp{
+    width:100%;
+    height:498px;
+}
+#sphoto{
+    width:100%;
+}
+.sph{
+    width:25%;
+    float:left;
+}
+@media(max-width:767px){
+    #nav2{
+        display:-webkit-box;
+    }
+    #nav1{
+        display:none;
+    }
+}
+@media(max-width:1048px){
+    .sph{
+        width:50%;
+
+    }
+}
+@media(max-width:706px){
+    .sph{
+        width:100%;
+    }
+}
+
