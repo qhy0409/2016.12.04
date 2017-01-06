@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转木马</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #stage {
+            width: 1000px;
+            height: 300px;
+            background: #cccccc;
+            margin: 50px auto;
+            box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: center -60%;
+        }
+
+        #container {
+            width: 128px;
+            height: 100px;
+            margin: 50px auto;
+            /*background: pink;*/
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease;
+        }
+
+        img {
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: transform 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="stage">
+    <div id="container"></div>
+</div>
+<script>
+    var oContainer = document.getElementById("container");
+    var aImg = oContainer.getElementsByTagName("img");
+    var index = 9;
+    var idx = 1;
+    var x = 64 / Math.tan(20 * Math.PI / 180) + 20;
+    for (var i = 0; i < 9; i++) {
+        var oImg = new Image();
+        oImg.src = "image/" + (i + 1) + ".jpg";
+        oContainer.appendChild(oImg);
+    }
+    /*第一种
+     var html = "";
+     for (var i = 0; i < 9; i++) {
+     html += "<img src='image/" + (i + 1) + ".jpg'/>";
+     }
+     oContainer.innerHTML = html;*/
+    oContainer.onclick = function () {
+        idx++;
+        oContainer.style.transform = "rotateY(" + idx * 40 + "deg)";
+    };
+    for (var i = 0; i < 9; i++) {
+        (function (index) {
+            setTimeout(function () {
+                var j = 8 - index;
+                aImg[j].style.WebkitTransform = 'rotateY(' + (-j * 40) + 'deg) translateZ(' + x + 'px)';
+            }, (i + 1) * 100);
+        })(i)
+    }
+    /*第一种
+     var timer = setInterval(function () {
+     index--;
+     if (index < 0) {
+     clearInterval(timer);
+     } else {
+     aImg[index].style.WebkitTransform = 'rotateY(' + (-index * 40) + 'deg) translateZ(' + x + 'px)';
+     }
+     }, 100);*/
+    /*第二种
+     for(var i=0;i<9;i++) {
+     setTimeout(function () {
+     index--;
+     aImg[index].style.WebkitTransform = 'rotateY(' + (-index * 40) + 'deg) translateZ(' + x + 'px)';
+     }, (i+1)*100)
+     }*/
+</script>
+
+</body>
+</html>
