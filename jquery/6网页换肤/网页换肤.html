@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/skin_01.css" rel="stylesheet" type="text/css" id="cssfile" />
+</head>
+<body>
+<ul id="skin">
+    <li id="skin_01" title="灰色" class="selected"></li>
+    <li id="skin_02" title="紫色"></li>
+    <li id="skin_03" title="红色"></li>
+    <li id="skin_04" title="蓝色"></li>
+    <li id="skin_05" title="橙色"></li>
+    <li id="skin_06" title="浅绿色"></li>
+</ul>
+<div id="news">
+    <h1>实时新闻</h1>
+</div>
+<div id="game_news">
+    <h1>娱乐新闻</h1>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+    //第一种
+//    $(function(){
+//        var $li=$('#skin li');
+//        $li.on('click',function(){
+//           changeSkin(this.id);
+//        });
+//            var cookie_skin = $.cookie( "MyCssSkin");
+////            console.log(cookie_skin);
+//            if(cookie_skin){
+////                console.log(cookie_skin);
+//                changeSkin(cookie_skin);
+//            }
+//
+//        function changeSkin(name){
+////            console.log(name);
+//            $('#'+name).addClass('selected').siblings().removeClass('selected');
+//            $('#cssfile').attr('href','css/'+name+'.css');
+//            $.cookie( "MyCssSkin" ,  name , { path: '/', expires: 10 });
+//        }
+//    })
+
+
+    //第二种
+
+    $(function(){
+        var $li=$('#skin li');
+        $li.on('click',function(){
+            $(this).addClass('selected').siblings().removeClass('selected');
+            $('#cssfile').attr('href','css/'+this.id+'.css');
+            var id=this.id;
+            setCookie('color1',id,7)
+        });
+        var skin=getCookie('color1');
+        $('#'+skin).addClass('selected').siblings().removeClass('selected');
+        $('#cssfile').attr('href','css/'+skin+'.css');
+
+
+        function setCookie(name,value,day){
+            var str=name+'='+value+';';
+            if(day){
+                var date=new Date();
+                date.setDate(date.getDate()+day);
+                str=str+'expires'+date;
+
+            }
+            document.cookie=str;
+
+        }
+
+        function getCookie(name){
+            var str=document.cookie;
+            var arr=str.split('; ');
+            for(var i=0;i<arr.length;i++){
+                var arr1=arr[i].split('=');
+                if(arr1[0]==name){
+                    return arr1[1];
+                }
+            }
+
+        }
+    })
+
+</script>
+</body>
+</html>
