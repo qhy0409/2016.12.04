@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+            width: 200px;
+            height: 400px;
+            margin: 100px;
+        }
+
+        #content {
+            height: 200px;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        #big, #small {
+            float: left;
+            width: 50px;
+            height: 30px;
+            background: grey;
+            margin-right: 5px;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<form>
+    <div id="container">
+        <div id="btn">
+            <div id="big">放大</div>
+            <div id="small">缩小</div>
+        </div>
+        <div>
+            <textarea id="content" cols="20" rows="8">我希望我可以实现我的愿望，每天开开心心，顺顺利利的实现我的愿望，哈哈哈哈哈哈，必须的必须的必须的</textarea>
+        </div>
+    </div>
+</form>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('#big').click(function () {
+            if (!$('#content').is(':animated')) {
+                if ($('#content').height() < 400) {
+                    $('#content').animate({height: '+=50'}, 400);
+                }
+            }
+        });
+
+        $('#small').click(function () {
+            if (!$('#content').is(':animated')) {
+                if ($('#content').height() > 30) {
+                    $('#content').animate({height: '-=10'}, 400);
+                }
+            }
+        })
+
+    })
+
+
+</script>
+
+</body>
+</html>

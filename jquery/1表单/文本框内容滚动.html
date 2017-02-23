@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+            width: 200px;
+            margin: 100px;
+        }
+
+        #up, #down {
+            width: 60px;
+            height: 30px;
+            background: grey;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="btn">
+        <span id="up">向上</span>
+        <span id="down">向下</span>
+    </div>
+    <div>
+        <textarea id="content" cols="20" rows="8">我特别特别特别讨厌于硕，怎么办呢？特别特别烦他，膈应人，真是烦透了，不想看见他。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！我特别特别特别讨厌于硕，怎么办呢？特别特别烦他，膈应人，真是烦透了，不想看见他。啊啊啊啊啊啊啊啊啊啊啊啊</textarea>
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('#up').on('click', function () {
+            if (!$('#content').is(':animated')) {
+                $('#content').animate({scrollTop: "-=15"}, 400);
+            }
+        })
+        $('#down').on('click', function () {
+            if (!$('#content').is(':animated')) {
+                $('#content').animate({scrollTop: "+=15"}, 400);
+            }
+        })
+    })
+
+</script>
+</body>
+</html>
