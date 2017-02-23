@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab {
+            width: 300px;
+            position: relative;
+        }
+
+        .tab_menu li {
+            float: left;
+            background: greenyellow;
+            width: 60px;
+            height: 30px;
+            margin-right: 10px;
+            line-height: 30px;
+            text-align: center;
+            cursor:pointer;
+            opacity: 0.8;
+            border:2px solid white;
+        }
+
+        .tab_box {
+            width: 290px;
+            height: 200px;
+            border: 1px solid blueviolet;
+            position: absolute;
+            top: 34px;
+            color:white;
+            background: black;
+            border-top:none;
+
+        }
+
+        .tab_menu li.selected {
+            background: black;
+            opacity: 1;
+            color:white;
+            border:3px solid black;
+        }
+
+        .hide {
+            display: none;
+        }
+        .tab .tab_menu li.hover{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tab">
+    <div class="tab_menu">
+        <ul>
+            <li class="selected">时事</li>
+            <li>体育</li>
+            <li>新闻</li>
+            <li>娱乐</li>
+        </ul>
+    </div>
+    <div class="tab_box">
+        <div>时事</div>
+        <div class="hide hover">体育</div>
+        <div class="hide">新闻</div>
+        <div class="hide">娱乐</div>
+    </div>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    var $div_li=$('div.tab_menu ul li');
+    $div_li.mouseover(function(){
+        $(this).addClass('selected').siblings().removeClass('selected');
+        var $index=$div_li.index(this);
+        $('.tab_box div').eq($index).show().siblings().hide();
+    })
+</script>
+
+</body>
+</html>
