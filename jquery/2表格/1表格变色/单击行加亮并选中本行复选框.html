@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+
+        th {
+            width: 100px;
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+
+        h3 {
+            width: 400px;
+            text-align: center;
+        }
+
+        .odd {
+            background: greenyellow;
+            color: white;
+        }
+
+        .even {
+            background: blueviolet;
+            color: white;
+        }
+
+        .selected {
+            background: #FF6500;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr><h3>信息表</h3></tr>
+    <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="choice"/></td>
+        <td>秦昊宇</td>
+        <td>女</td>
+        <td>黑龙江哈尔滨</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice"/></td>
+        <td>秦小吉</td>
+        <td>女</td>
+        <td>黑龙江哈尔滨</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice"/></td>
+        <td>吉吉</td>
+        <td>女</td>
+        <td>黑龙江哈尔滨</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice"/></td>
+        <td>哈哈</td>
+        <td>男</td>
+        <td>中国北京</td>
+    </tr>
+    </tbody>
+</table>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        $('tbody>tr:odd').addClass('odd');
+        $('tbody>tr:even').addClass('even');
+        $('tbody tr').on('click', function () {
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected').find('input').prop('checked',false);
+            } else {
+                $(this).addClass('selected').find('input').prop('checked', true);
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

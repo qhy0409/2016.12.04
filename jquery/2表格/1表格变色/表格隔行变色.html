@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            border:0;
+            border-collapse: collapse;
+        }
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+        th{
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+        h3{
+            width:300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form>
+    姓名：<input type="text" id="name"><br/>
+    性别：<input type="text" id="sex"><br/>
+    暂住地：<input type="text" id="adress"><br/>
+    提交：<input type="button" id="put" value="提交">
+    重置：<input type="reset">
+</form>
+<table>
+    <thead>
+    <tr><h3>信息表</h3></tr>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>秦昊宇</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr><td>秦小吉</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr><td>吉吉</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr><td>哈哈</td><td>男</td><td>中国北京</td></tr>
+    </tbody>
+</table>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('#put').on('click',function(){
+            $('tbody').append('<tr><td>'+$('#name').val()+'</td><td>'+$('#sex').val()+'</td><td>'+$('#adress').val()+'</td></tr>');
+            $('tbody tr:odd').css('background','#FFF38F');
+            $('tbody tr:even').css('background','#FFFFEE');
+        });
+       $('tbody tr:odd').css('background','#FFF38F');
+       $('tbody tr:even').css('background','#FFFFEE');
+    })
+</script>
+</body>
+</html>

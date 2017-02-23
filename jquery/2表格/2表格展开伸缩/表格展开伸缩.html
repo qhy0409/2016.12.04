@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            border:0;
+            border-collapse: collapse;
+        }
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+        th{
+            width:100px;
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+        h3{
+            width:300px;
+            text-align: center;
+        }
+        .parent{
+            background:#FFF38F;
+        }
+        .selected{
+            background:orangered;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr><h3>信息表</h3></tr>
+    <tr>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="child1"><td colspan="3">菜单1</td></tr>
+    <tr class="child1_1"><td>秦昊宇</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr class="child1_1"><td>秦小吉</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr class="parent" id="child2"><td colspan="3">菜单2</td></tr>
+    <tr class="child2_1"><td>吉吉</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr class="child2_1"><td>哈哈</td><td>男</td><td>中国北京</td></tr>
+    <tr class="parent" id="child3"><td colspan="3">菜单3</td></tr>
+    <tr class="child3_1"><td>吉吉</td><td>女</td><td>黑龙江哈尔滨</td></tr>
+    <tr class="child3_1"><td>哈哈</td><td>男</td><td>中国北京</td></tr>
+    </tbody>
+</table>
+<script src="../../jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('.parent').on('click',function(){
+            var $id=$(this).prop('id');
+            //第一种
+//           if($(this).hasClass('selected')){
+//               $(this).removeClass('selected').siblings('.'+$id+'_1').show();
+////               console.log($id+'_1');
+//           }else{
+//               $(this).addClass('selected').siblings('.'+$id+'_1').hide();
+////               console.log($id+'_1');
+//           }
+            //第二种
+            $(this).toggleClass('selected').siblings('.'+$id+'_1').toggle();
+        })
+    })
+</script>
+</body>
+</html>

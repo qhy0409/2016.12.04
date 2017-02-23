@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            background-image: url('img/down.gif');
+            background-repeat: no-repeat;
+            background-position: 3px center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tab {
+            float: left;
+            width: 100px;
+            background: grey;
+            margin-right: 5px;
+
+        }
+
+        .tab li, a {
+            height: 30px;
+            display: block;
+            line-height: 30px;
+            text-align: center;
+            color: white;
+            border-bottom: 1px dashed white;
+        }
+
+        .tab ul {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li class="tab">
+        <a href="#">菜单1</a>
+        <ul>
+            <li>子菜单1</li>
+            <li>子菜单2</li>
+            <li>子菜单3</li>
+        </ul>
+    </li>
+    <li class="tab">
+        <a href="#">菜单2</a>
+        <ul>
+            <li>子菜单1</li>
+            <li>子菜单2</li>
+            <li>子菜单3</li>
+        </ul>
+    </li>
+    <li class="tab">
+        <a href="#">菜单3</a>
+        <ul>
+            <li>子菜单1</li>
+            <li>子菜单2</li>
+            <li>子菜单3</li>
+        </ul>
+    </li>
+</ul>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $('.tab').mouseover(function () {
+        $(this).children('ul').stop().slideDown('slow');
+        $(this).children('a').css('background-image', 'url("img/up.gif")');
+    }).mouseout(function () {
+        $(this).children('ul').stop().slideUp('slow');
+        $(this).children('a').css('background-image', 'url("img/down.gif")');
+    })
+</script>
+
+</body>
+</html>
