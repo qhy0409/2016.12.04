@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+   /* var oScript = document.getElementsByTagName("head")[0].appendChild(document.createElement('script'));
+    oScript.src = 'test.js';
+    setTimeout(function(){
+        console.log(add(3,4));
+    },100);*/
+
+
+
+/*动态加载*/
+    function loadscript(url,fn) {
+        var oScript = document.getElementsByTagName("head")[0].appendChild(document.createElement('script'));
+        oScript.src = url;
+        oScript.onload=function(){
+            fn();
+    }
+    }
+   loadscript('test.js', function fn(){
+        console.log(add(3, 4));
+    });
+
+</script>
+
+
+</body>
+</html>

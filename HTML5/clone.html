@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="json2.js"></script>
+<script>
+    var o1 = {
+        name: "qinhaoyu",
+        age: 18,
+        gender: "male",
+        brother: {
+            name: "qinhaotian"
+        }
+    };
+    var o2 = clone(o1);
+
+    o1.name = "yushuo";
+
+    function clone(obj) {
+        var newObj = {};
+        for (prop in obj) {
+            if (typeof (obj[prop]) == "object") {
+                newObj[prop] = clone(obj[prop]);
+            } else
+                newObj[prop] = obj[prop];
+        }
+        return newObj;
+    }
+    console.log(o1);
+    /*
+     var obj1 = {
+     name: "qinhaoyu",
+     gender: "male",
+     age: "20",
+     brother: {
+     name: "qinhaotian"
+     },
+     hobbies: ['singing', 'dance']
+     };
+     var obj2 = clone(obj1);
+     function clone(obj) {
+     var newObj = {};
+     for (prop in obj) {
+     if (typeof(obj[prop]) == "object") {
+     newObj[prop] = clone(obj[prop]);
+     } else {
+     newObj[prop] = obj[prop];
+     }
+     }
+     return newObj;
+     }
+     console.log(obj2);
+     */
+
+</script>
+</body>
+</html>
