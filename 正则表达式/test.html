@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="text">秦秦秦等等</textarea>
+
+
+</body>
+<script>
+    //第一题  匹配40
+    //    var str='30CAC0040';
+    //    reg=/\d{0,2}$/;
+    //   console.log(reg.exec(str));
+
+    //第二题  匹配92
+    //    var str='3SFASDF92';
+    //    reg=/\d+$/;
+    //    console.log(reg.exec(str));
+
+    //第三题 ‘蓝 色 理   想’ 变成‘蓝 色 理 想’
+    //    var str = '蓝 色 理   想';
+    //    reg = /\s+/g;
+    //    //  str=str.replace(reg,' ');
+    //    console.log(reg.exec(str));
+    //    console.log(str);
+
+    //判断字符串是否为数字
+    //    var str='78fv6d';
+    //    var reg=/^\d+/;
+    //    if((reg.exec(str))[0]==str){
+    //        console.log(true);
+    //    }else{
+    //        console.log(false);
+    //    }
+    //    console.log(reg.exec(str));
+
+    //电话号码正则
+    //    var str='121-12365412-142';
+    //    reg=/^\d{3,4}-\d{7,8}(-\d{3,4})?$/;
+    //    console.log(reg.test(str));
+
+    //手机号码正则
+    //    var str='00015345678912';
+    //    var reg=/^0*(13|15)\d{9}$/;
+    //    console.log(reg.test(str));
+
+    //删除字符串中的空格
+    //    var str=" lfl dfj ";
+    //    var reg=/^\s+|\s+$/g;
+    //    str=str.replace(reg,'');
+    //    console.log(str);
+
+    //    function replaceReg(reg, str) {
+    //        return str.replace(reg, '')
+    //    }
+    //    var reg = /\.\d{1,3}$/;
+    //    var str = '192.168.118.101';
+    //    var str2 = '192.168.118.72';
+    //    var str3 = '192.168.118.1';
+    //    document.write(replaceReg(reg, str) + '<br />');
+    //    document.write(replaceReg(reg, str2) + '<br />');
+    //
+    //
+        //匹配ul到ul之间的内容
+    //    var str='<ul>safsf<ul>safsf</ul><ul>safsf</ul></ul> ';
+    //    var reg=/<ul>[\s\S]+?<ul>/i;
+    //    console.log(reg.exec(str));
+
+     //去掉字符串首尾空格
+    //    function trimStr(str){
+    //        var reg=/\s+$/;
+    //        str=str.replace(reg,'');
+    //        return str;
+    //    }
+    //    var str3=' abb c   ';
+    //    console.log(str3.length);
+    //    str3=trimStr(str3);
+    //    console.log(str3.length);
+    //    console.log(str3);
+
+    //绝对路径变为相对路径
+//    var str = "http://123.45.6.7/img/1.jpg";
+//    var reg = /http:\/\/[^\/]+/;
+//    console.log(reg.exec(str));
+//    str = str.replace(reg, "");
+//    console.log(str);
+
+
+    //用户名检测        4-16位中文，英文，数字，_,
+//    var str="qhy_秦秦秦";
+//    var reg=/^[\u4E00-\u9FA5\uf900-\ufa2d\w]{4,16}$/;
+//    console.log(reg.test(str));
+
+
+    //匹配价格  开头数字若干位，可能有一个小数点，小数点后面可以有两位数字
+//    var str="123";
+//    var reg=/^\d*([\.]?)\d{0,2}$/;
+//    console.log(reg.test(str));
+
+    //身份证匹配  身份证号码可以是15位或者是18位，其中后一位可以是X。其它全是数字，
+//    var str="1111111111111111";
+//    var reg=/^(\d{14}|\d{17})(X|\d)$/;
+//    console.log(reg.test(str));
+
+    //匹配英文地址
+//    规则如下:
+//            包含 "点", "字母","空格","逗号","数字"，但开头和结尾不能是除字母外任何字符。
+
+//    var str="rr";
+//    var reg=/^[a-zA-Z][\.a-zA-Z,\d\s0-9]*[a-zA-Z]$/;
+//    console.log(reg.test(str));
+
+    //英文首字母大写 blue idea 变为Blue Idea  BLUE IDEA 也变为blue idea
+//     var str="abc d d";
+//    var reg=/\b(\w)/g;
+//    str=str.toLowerCase();
+//    console.log(str);
+//    str=str.replace(reg,function(str){return str.toUpperCase()});
+//    console.log(str);
+
+    //    console.log(reg.exec(str));
+
+//    function replaceReg(reg,str){
+//        str = str.toLowerCase();
+//
+//    return str.replace(reg,function(m){return m.toUpperCase()})
+//    }
+//    var reg = /\b(\w)|\s(\w)/g;
+//    var str = 'blue idea';
+//    var str2 = 'BLUE IDEA';
+//    var str3 = 'Test \n str is no good!';
+//    var str4 = 'final test';
+//    document.write(replaceReg(reg,str)+'<br />');
+//    document.write(replaceReg(reg,str2)+'<br />');
+//    document.write(replaceReg(reg,str3)+'<br />');
+//    document.write(replaceReg(reg,str4)+'<br />');
+
+//    要求文本有指定行数
+//    匹配至少两行的字符串，每行都为非空字符。
+//    只要匹配到[\n\r]就表示有换行了，再保证换行的两段都不是空字符就可以了。正则如下：
+//    /\S+?[\n\r]\S+?/i
+//    这个正则的应用应该是用在textarea里，如果是如下要求：可以支持所有字符，中间可带空格，可以包括英文、数字、中文、标点
+//    这样的话，只要针对空格再改一下就行了。（按照非空的要求，上面有不能匹配“字符+空格+换行+字符”的字符串）。修改如下：
+//    /\S+?\s*?[\n\r]\s*?\S+?/i
+
+//    var t=document.getElementById("text");
+//    console.log(t.value);
+//    var reg= /\S+?\s*?[\n\r]\s*?\S+?/i;
+//    console.log(reg.test(t.value));
+
+//    正则验证日期格式
+//    yyyy-mm-dd格式
+//    var str="2014-11-09";
+//    var reg=/^\d{4}-\d{1,2}-\d{1,2}/;
+//    console.log(reg.test(str));
+
+//    去掉文件的后缀名
+//    www.abc.com/dc/fda.asp 变为 www.abc.com/dc/fda
+//    var str="www.abc.com/dc/fda.asp";
+//    var reg=/.asp$/;
+//    console.log(str.replace(reg,''));
+
+     //匹配邮箱名
+    var str="1@1.com";
+    var reg=/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    console.log(reg.test(str));
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li class="aa bb">001</li>
+    <li class="bb">002</li>
+    <li class="cc aa">003</li>
+</ul>
+<script>
+    function getClassName(classname, context) {
+        var results = [];
+        context = context || document;
+        console.log(context);
+        var all = context.getElementsByTagName('*');
+        var reg = new RegExp('\\b' + classname + '\\b');
+//        console.log(all);
+        for (var i = 0; i < all.length; i++) {
+            if (reg.test(all[i].className)) {
+                results.push(all[i]);
+            }
+        }
+        return results;
+    }
+    var oUl = document.getElementsByTagName('ul');
+    console.log(oUl);
+    var aa = getClassName('aa', oUl[0]);
+    console.log(aa);
+    for (var i = 0; i < aa.length; i++) {
+        aa[i].style.background = 'red';
+    }
+</script>
+</body>
+</html>
