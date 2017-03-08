@@ -1,0 +1,284 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    height:60px;
+}
+.wrapper{
+    width:1170px;
+    margin:0 auto;
+}
+#logo{
+    line-height:60px;
+    float:left;
+}
+#nav{
+    float:right;
+}
+
+#nav li{
+    float:left;
+    margin-left:50px;
+    line-height:60px;
+}
+.header a{
+    color:#000000;
+}
+
+.bigImg{
+    position:relative;
+}
+.bigImg img{
+    width:100%;
+}
+
+#search{
+    width:766px;
+    height:45px;
+    background: white;
+    position:absolute;
+    bottom:45px;
+    left:300px;
+}
+
+select{
+    width:163px;
+    height:45px;
+    border:none;
+    background:#39c6a7;
+    font-size:20px;
+    color:#ffffff;
+    text-indent: 40px;
+    word-spacing: 10px;
+}
+
+#search-con{
+    width:405px;
+    height:45px;
+    border:none;
+    margin-left:-8px;
+}
+
+#search a{
+    width:190px;
+    height:45px;
+    float:right;
+
+    border-left:2px solid #39c6a7;
+
+}
+
+#search-pic{
+    float:right;
+    width:90px;
+    height:45px;
+    background:url("../img/sprite.png") 25px 20px no-repeat;
+}
+#search-btn{
+    width:100px;
+    height:45px;
+    float:right;
+    text-align: right;
+    line-height:45px;
+    word-spacing:10px;
+}
+
+
+
+.con-header{
+    text-align: center;
+    margin-top:43px;
+}
+.con-header h1{
+    color:#312b25;
+}
+
+.con-header div{
+    margin-top:20px;
+    font-size:10px;
+    color:#cccccb;
+}
+.con-img{
+    height:271px;
+    margin-top:40px;
+}
+.con-img img{
+    width:366px;
+    height:230px;
+}
+.con-img li{
+    width:366px;
+    float:left;
+    margin-left:20px;
+}
+.con-img1{
+    margin-top:-4px;
+    width:363px;
+    height:40px;
+    border:1px solid #dde2e6;
+    border-top:none;
+}
+
+.con1{
+    height:20px;
+    float:left;
+    font-size:15px;
+    line-height:20px;
+    color:#304241;
+
+}
+.con2{
+    height:20px;
+    float:right;
+    font-size:15px;
+    text-align: right;
+    line-height:20px;
+    color:#304241;
+
+}
+.con3{
+    color:#afb1b1;
+    font-size:10px;
+    float:left;
+    height:20px;
+    line-height:20px;
+}
+
+.con1-header{
+    text-align: center;
+    margin-top:43px;
+    margin-bottom:40px;
+}
+
+.con1-header h1{
+    color:#312b25;
+}
+
+.con1-header div{
+    margin-top:20px;
+    font-size:10px;
+    color:#cccccb;
+}
+
+.con1-labels{
+    width:1130px;
+    height:276px;
+    margin:0 20px;
+}
+.con1-labels li{
+    width:225px;
+    height:276px;
+    float:left;
+    border-right:1px solid #dde2e6;
+}
+.con1-labels li:last-child{
+    border-right:none;
+}
+
+.con1-labels li .img{
+    width:78px;
+    height:65px;
+    margin-left:74px;
+    margin-top:55px;
+}
+.con1-labels li .img1{
+    background: url(../img/sprite.png) -20px -20px no-repeat;
+}
+.con1-labels li .img2{
+    background: url(../img/sprite.png) -120px -20px no-repeat;
+}
+.con1-labels li .img3{
+    background: url(../img/sprite.png) -220px -20px no-repeat;
+}
+.con1-labels li .img4{
+    background: url(../img/sprite.png) -320px -20px no-repeat;
+}
+.con1-labels li .img5{
+    background: url(../img/sprite.png) -420px -20px no-repeat;
+}
+.con1-labels li .label{
+    width:130px;
+    height:43px;
+    margin-left:77px;
+    margin-top:34px;
+    font-weight:700;
+    color:#000000;
+}
+
+
+
+
+.image{
+    height:404px;
+    margin-top:73px;
+    margin-bottom:30px;
+}
+.image-left{
+    width:652px;
+    height:404px;
+    float:left;
+}
+.image-right{
+    width:480px;
+    height:404px;
+    float:right;
+}
+.image-right img:last-child{
+    margin-top:20px;
+}
+
+
+
+.footer{
+    height:170px;
+    background:#142637;
+}
+.footer-logo{
+     width:100px;
+    height:42px;
+    font-size:25px;
+    font-weight:500;
+    margin-left:70px;
+    margin-top:60px;
+    color:white;
+    float:left;
+}
+
+.footer-nav{
+    width:105px;
+    height:100px;
+    margin-left:94px;
+    margin-top:34px;
+    float:left;
+    border-left:1px solid white;
+}
+.footer-nav li a{
+    width:105px;
+    height:25px;
+    color:white;
+    display:block;
+    text-align: center;
+    line-height:25px;
+}
+
+.footer-2weima{
+    float:right;
+    margin-right:56px;
+    margin-top:14px;
+}
+
+.footer-label{
+    float:right;
+    color:white;
+    width:118px;
+    height:30px;
+    margin-top:65px;
+    margin-right:67px;
+}
