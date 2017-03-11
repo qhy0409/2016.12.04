@@ -50,13 +50,23 @@ img{
 .bigp{
     width:100%;
     height:498px;
+
 }
 #sphoto{
     width:100%;
+
 }
 .sph{
     width:25%;
     float:left;
+}
+.pad{
+    -webkit-box-orient: vertical;
+    background: green;
+    height:100px;
+}
+#head .moveOut{
+
 }
 @media(max-width:767px){
     #nav2{
